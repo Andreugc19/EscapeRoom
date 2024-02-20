@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('cerrar-sesion').addEventListener('click', function(event) {
             event.preventDefault();
             sessionStorage.removeItem('usuario');
-            window.location.href = '/Portada/index.html';
+            window.location.href = 'index.html';
         });
     }
 });
