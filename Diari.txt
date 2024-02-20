@@ -1,0 +1,41 @@
+Dia 1:
+Plantejament del projecte (disseny, jocs, gestio de usuaris)
+
+Dia 2:
+Començar a fer el disseny de la portada amb el menu amb les diferentis opcion (inici sesio, registre, clasificacio, manual instruccions) no funcionals
+
+Dia 3:
+Seguint amb el disseny de la portada i començar implementacio de la funcionalitat de registre de ususaris
+
+Dia 4:
+Funcionalitar de registre de usuaris acabat i començament de la implementacio de la funcionalitat de inici de sessio amb tancar la sessio
+
+Dia 5:
+Inici de sessio i tancament de sessio acabat
+
+Dia 6:
+Começar amb el primer joc, Wordle, implementacio de disseny.
+
+Dia 7:
+Disseny del joc wordle acabat i començament de javascript per la funcionalitat del joc (mecanisme de endivinar les paraules)
+
+Dia 8:
+Mecanisme de endivinar paraules acabat, implementacio de teclat a la pantalla i funcionament del teclat manual per el joc 
+
+Dia 9:
+Funcionament de teclat manual finalitzat i implementar sistema de puntuar al joc (100 punts a la primera; devalla 20 punts per paraula no encertada)
+
+Dia 10:
+Acabat el sistema de puntuar, començar a les pistes(-10 punts) i temps.
+
+Dia 11:
+Implementacio de pistes i temps acabat.
+
+Dia 12:
+Começar amb el segon joc, Memeory, implementacio de disseny.
+
+Dia 13:
+Disseny del joc memory acabat i començament de javascript per la funcionalitat del joc (mecanisme per endivinar dues cartes iguals)
+
+Dia 14:
+Funcionalitats de javascript del memory acabades y realitzacio de temps y puntuacio y sistema de pistes

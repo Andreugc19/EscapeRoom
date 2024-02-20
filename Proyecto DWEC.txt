@@ -1,0 +1,14 @@
+Ideas minijuegos para Escape Room:
+
+- Ahorcado (Cada error -5 segundos) [1 minuto] 
+- Wordle (1: 100 puntos; 2: 80 puntos; 3: 60 puntos; 4: 40 puntos, 5: 20 puntos / falla: se repite el juego con una nueva palabra MAX: 10 puntos)
+- Memory Pokemon (Cada error -5 segundos) [1 minuto]
+- Space invaders (3 vidas: 100 puntos; 2 vidas: 50 puntos; 1 vida: 25 puntos)
+- Preguntados 5 preguntas (5 aciertos: 100 puntos; 4 aciertos: 80 puntos; 3 aciertos: 60 puntos; 2 aciertos: 40 puntos; 1 aciertos: 20 puntos; 0 aciertos: 0 puntos)
+- Buscar diferencias
+- Objeto correcto a persona
+
+Mejoras:
+
+- Mejorar ahorcado con niveles de dificultad y añadiendo pistas
+-

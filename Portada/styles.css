@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Imatges/portada.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+.title-image {
+    width: 95%;
+    margin-top: 300px;
+    margin-left: 300px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.button {
+    margin-bottom: 20px;
+    height: 70px;
+    width: 250px;
+    font-size: 30px;
+    background: linear-gradient(135deg, #000000, #bd1f1f);
+    color: #969191;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #000000, #990d0d);
+}
+
+.welcome-message {
+    color: white;
+}
+
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.5s;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 20px;
+    border-bottom: 1px solid #555;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    color: #ca0d0d;
+}
