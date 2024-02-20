@@ -5,7 +5,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     
     if (localStorage.getItem(nombreUsuario) === contrasena) {
         sessionStorage.setItem('usuario', nombreUsuario);
-        window.location.href = '/Portada/index.html';
+        window.location.href = 'index.html';
     } else {
         document.getElementById('mensaje').textContent = 'Nombre de usuario o contraseña incorrectos.';
     }
