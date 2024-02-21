@@ -8,7 +8,6 @@ const errors = document.getElementById("errors");
 const paraula = document.getElementById("paraula");
 const boto = document.getElementById("boto");
 const text = document.getElementById("text");
-const select = document.getElementById("select");
 const compteEnrrere = document.getElementById("compteEnrrere");
 
 // Variables per el Joc
@@ -30,7 +29,9 @@ temps.setHours(0, 0, 0, 0);
 
 // Funcio per iniciar una nova partida
 function iniciarPartida() {
-  paraulaAleatoria(select.value);
+  const categories = ['animals', 'paisos', 'ciutats', 'professions', 'deports'];
+  const categoriaAleatoria = categories[Math.floor(Math.random() * categories.length)];
+  paraulaAleatoria(categoriaAleatoria);
   penalizacioPerTemps = 0;
   reiniciar();
   començar();
@@ -189,9 +190,18 @@ function acabarPartida() {
 
       popupTitol.innerHTML = "Felicitats, has guanyat!";
       popupMissatge.innerHTML = "¡Has endivinat la paraula correctament!<br><br>ESTADISTIQUES<br>Paraula: " + estadistiques.word + "<br>Errors: " + estadistiques.errors + "<br>Temps: " + estadistiques.time;
+
+      botoTancar.style.display = "none";
+
+      setTimeout(() => {
+        window.location.href = "../PedraPaperTissores/PedraPaperTissores.html";
+      }, 2000);
     } else {
       popupTitol.innerHTML = "Has perdut";
       popupMissatge.innerHTML = "La paraula a endivinar era: " + paraulaAEndevinar;
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }
 
     popup.style.display = "flex";

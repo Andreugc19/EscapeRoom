@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.removeItem('usuario');
             window.location.href = 'index.html';
         });
+
+        // Obtener los botones de dificultad
+        var botonesDificultad = document.querySelectorAll('.button');
+        // Iterar sobre los botones para agregar el evento de clic modificado
+        botonesDificultad.forEach(function(boton) {
+            boton.addEventListener('click', function(event) {
+                // Verificar si hay un usuario conectado
+                if (!nombreUsuario) {
+                    event.preventDefault();
+                    alert("Debes iniciar sesión para poder jugar.");
+                }
+            });
+        });
+    } else {
+        // Si no hay un usuario conectado, deshabilitar los botones de dificultad
+        var botonesDificultad = document.querySelectorAll('.button');
+        botonesDificultad.forEach(function(boton) {
+            boton.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert("Debes iniciar sesión para poder jugar.");
+            });
+        });
     }
 });
 

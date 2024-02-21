@@ -1,4 +1,5 @@
 var errors = 0;
+var score = 0;
 var cardList = [
     "darkness",
     "double",
@@ -7,26 +8,24 @@ var cardList = [
     "fire",
     "grass",
     "lightning",
-    "metal",
-    "psychic",
-    "water"
-]
+    "metal"
+];
 
 var cardSet;
 var board = [];
 var rows = 4;
-var columns = 5;
-
+var columns = 4; // Cambiado a 4
 var card1Selected;
 var card2Selected;
 var timerInterval;
+var timeLimit = 90; // Tiempo límite en segundos (1 minuto y medio)
 
 window.onload = function() {
     shuffleCards();
     startGame();
     hideCards();
     startTimer();
-}
+};
 
 function shuffleCards() {
     cardSet = cardList.concat(cardList);
@@ -109,11 +108,15 @@ function update() {
             card2Selected.classList.add("matched");
             card1Selected = null;
             card2Selected = null;
+            score += 20; // Sumar 20 puntos por coincidencia
+            document.getElementById("score").innerText = score; // Actualizar la puntuación en el DOM
             setTimeout(checkGameEnd, 500);
         } else {
             // No coincidencia
             errors += 1;
+            score -= 5; // Restar 5 puntos por error
             document.getElementById("errors").innerText = errors;
+            document.getElementById("score").innerText = score; // Actualizar la puntuación en el DOM
             setTimeout(() => {
                 card1Selected.querySelector('img').src = "img/back.jpg";
                 card2Selected.querySelector('img').src = "img/back.jpg";
@@ -133,6 +136,12 @@ function startTimer() {
         let minutes = Math.floor(seconds / 60);
         let remainderSeconds = seconds % 60;
         document.getElementById("timer").innerText = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+        
+        if (seconds >= timeLimit) {
+            clearInterval(timerInterval);
+            alert("¡Tiempo agotado!");
+            window.location.reload(); // Recargar la página
+        }
     }, 1000);
 }
 
@@ -147,7 +156,7 @@ function checkGameEnd() {
         clearInterval(timerInterval);
         alert("¡Has ganado!");
         setTimeout(function() {
-            window.location.href = "/Portada/index.html";
+            window.location.href = "../Penjat/index.html";
         }, 500);
     }
 }
