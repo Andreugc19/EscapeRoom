@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra-Paper-Tisores</title> 
+    <link rel="stylesheet" href="PedraPaperTisores.css">
+</head>
+
+<body>
+    <h1>
+        <div id="opponent-container">
+            <span id="opponent-score">Opponent: 0</span>
+        </div>
+    </h1>
+    <img id="opponent-choice">
+    <br>
+    <img id="your-choice">
+    <div id="choices"></div>
+    <h1>
+        <div id="your-container">
+            <span id="your-score">You: 0</span>
+        </div>
+    </h1>
+
+    <div id="popup-container" class="popup-container">
+        <div id="popup-message" class="popup-message"></div>
+    </div>
+
+    <!-- Botón para mostrar la pista -->
+    <div id="hint-button-container" class="hint-button-container">
+        <button id="hint-button" onclick="showHintPopup()">Generar Pista</button>
+    </div>
+
+    <!-- Contenedor del popup de la pista -->
+    <div id="hint-popup-container" class="popup-container">
+        <div id="hint-popup-message" class="popup-message"></div>
+    </div>
+
+    <script src="PedraPaperTisores.js"></script>
+</body>
+</html>

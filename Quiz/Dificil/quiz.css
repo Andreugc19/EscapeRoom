@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilos del cuerpo */
+body{
+    font-family: sans-serif;
+    background: linear-gradient(115deg, black, white);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+/* Estilos del contenedor de preguntas */
+.questions{
+    margin: 3rem auto;
+    width: 90vw;
+    padding: 2rem;
+    background: rgba(101, 101, 101, 0.45);
+    color: rgb(216, 216, 216);
+    cursor: default;
+    border-radius: 1rem;
+}
+/* Estilos de la pregunta */
+#question{
+    margin-bottom: 1rem;
+}
+/* Estilos de las opciones */
+.option{
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    width: 15rem;
+    background: rgb(190, 190, 190);
+    border-radius: 1rem;
+}
+.option span{
+    color: black;
+}
+
+.option:hover{
+    color: rgb(255, 255, 255);   
+}
+
+.option span:hover{
+    color: black;
+}
+/* Estilos de la lista ordenada */
+ol{
+    position: relative;
+    padding: 0 1.5rem;
+    color: rgb(255, 255, 255);
+}
+/* Estilos de los elementos span dentro de las opciones */
+span{
+    display: block;
+    padding: 0.1rem 0.7rem;
+    border-radius: 1rem;
+}
+/* Estilos de la estadística */
+#stat{
+    margin-top: 1.5rem;
+    color: rgb(216, 216, 216);
+}
+/* Estilos de los botones */
+.buttons{
+    text-align: center;
+}
+button{
+    padding: 0.2rem 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
+    color: rgba(255, 255, 255, 0.82);
+    background: rgba(48, 48, 48, 0.98);
+}
+button:active{
+    background: lavender;
+}
+/* Estilos del marcador de puntaje y del banco de respuestas */
+#scoreboard,#answerBank{
+    width: 20rem;
+    background: rgba(230,230,250,0.77);
+    padding: 2rem;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 5rem;
+    display: none;
+}
+/* Estilos del título del puntaje */
+#score-title{
+    margin: 1rem 0;
+}
+/* Estilos del puntaje */
+#score{
+    font-size: 2.5rem;
+}
+/* Estilos de la lista ordenada dentro del banco de respuestas */
+#answerBank li{
+    text-align: left;
+    margin-bottom: 0.2rem;
+    font-size: larger;
+}
+/* Estilos del contenedor de popup */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+/* Estilos del popup */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

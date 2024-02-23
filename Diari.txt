@@ -1,41 +1,47 @@
-Dia 1:
+22/01:
 Plantejament del projecte (disseny, jocs, gestio de usuaris)
 
-Dia 2:
+23/01:
 Començar a fer el disseny de la portada amb el menu amb les diferentis opcion (inici sesio, registre, clasificacio, manual instruccions) no funcionals
 
-Dia 3:
-Seguint amb el disseny de la portada i començar implementacio de la funcionalitat de registre de ususaris
+24/01:
+Seguint amb el disseny de la portada i començar implementacio de la funcionalitat de registre de usuaris
 
-Dia 4:
-Funcionalitar de registre de usuaris acabat i començament de la implementacio de la funcionalitat de inici de sessio amb tancar la sessio
+29/01:
+Funcionalitat de registre de usuaris acabat i començament de la implementacio de la funcionalitat de inici de sessio amb tancar la sessio
 
-Dia 5:
+30/01:
 Inici de sessio i tancament de sessio acabat
 
-Dia 6:
-Começar amb el primer joc, Wordle, implementacio de disseny.
+31/01:
+Começar amb el primer joc (dificultat Normal), Pedra-Paper-Tisores, implementacio de disseny.
 
-Dia 7:
-Disseny del joc wordle acabat i començament de javascript per la funcionalitat del joc (mecanisme de endivinar les paraules)
+3/02:
+Disseny del joc Pedra-Paper-Tisores acabat i començament de javascript per la funcionalitat del joc (mecanisme de que un objecte guanya l'altre)
 
-Dia 8:
-Mecanisme de endivinar paraules acabat, implementacio de teclat a la pantalla i funcionament del teclat manual per el joc 
+5/02:
+Mecanisme d'objecte guanya l'altre acabat, implementacio de victoria de cada jugador i implementar sistema de pistes al joc
 
-Dia 9:
-Funcionament de teclat manual finalitzat i implementar sistema de puntuar al joc (100 punts a la primera; devalla 20 punts per paraula no encertada)
+6/02:
+Começar amb el segon joc, Memory, implementacio de disseny.
 
-Dia 10:
-Acabat el sistema de puntuar, començar a les pistes(-10 punts) i temps.
-
-Dia 11:
-Implementacio de pistes i temps acabat.
-
-Dia 12:
-Começar amb el segon joc, Memeory, implementacio de disseny.
-
-Dia 13:
+7/02:
 Disseny del joc memory acabat i començament de javascript per la funcionalitat del joc (mecanisme per endivinar dues cartes iguals)
 
-Dia 14:
-Funcionalitats de javascript del memory acabades y realitzacio de temps y puntuacio y sistema de pistes
+12/02:
+Funcionalitats de javascript del memory acabades y realitzacio de temps y puntuacio(20p encert, -5p fall) y sistema de pistes(mostra 1 carta / -5p)
+
+13/02:
+Funcionalitat de temps i pistes acabat, començament del tercer joc, Penjat, agafat del projecte anterior
+
+14/02:
+Modificacions per a que generi una paraula aleatoria sense elegir categoria, i implementacio de pistes (genera una lletra bona / resta 1 intent)
+
+19/02:
+Implementacio i funcionalitat de pistes acabat, començament del darrer joc, quiz (5 preguntes, minim 3 correctes)
+
+20/02: 
+Implementacio y finalitzacion de mecanisme de 5 preguntes y minim 3 acertades
+
+21/02: 
+Implementar dificultat dicifil: tots els jocs sense pistes, quiz: 10 preguntes / minim 7 correctes, pedra-paper-tisores: 1r arribar 5 victories, memory: 10 parelles <1 minut 

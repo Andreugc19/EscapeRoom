@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url('../img/cueva.png');
+    background-size: cover;
+}
+
+#opponent-container {
+    border: 2px solid rgb(79, 79, 79);
+    background-color: rgb(79, 79, 79);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+#your-container {
+    border: 2px solid rgb(79, 79, 79);
+    background-color: rgb(79, 79, 79);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+#opponent-choice {
+    width: 240px;
+    height: 240px;
+    background-color: rgba(59, 32, 32, 0.8);
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#your-choice {
+    width: 240px;
+    height: 240px;
+    background-color: rgba(59, 32, 32, 0.8);
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#choices {
+    width: 240px;
+    height: 80px;
+    background-color: rgb(76, 55, 55, 0.8);
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#choices img {
+    width: 80px;
+    height: 80px;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+.popup-message {
+    text-align: center;
+}
+
+/* Estilos para el botón de la pista */
+.hint-button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#hint-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #727272; /* Color verde */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+#hint-button:hover {
+    background-color: #45a049; /* Color verde más oscuro al pasar el ratón */
+}

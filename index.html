@@ -6,14 +6,15 @@
     <title>Escape Room</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body>s
     <div class="container">
         <div class="header">
             <img src="/Imatges/titulo.png" alt="Escape Room" class="title-image">
             <div class="buttons-container">
-                <a href="/Memory/memory.html"><button class="button">Facil</button></a>
-                <a href="/Memory/memory.html"><button class="button">Media</button></a>
-                <a href="/Memory/memory.html"><button class="button">Dificil</button></a>
+                <a href="/Historia/Normal/prova1.html"><button class="button">Normal</button></a>
+                <a href="/Historia/Dificil/prova1.html"><button class="button">Dificil</button></a>
+                <a href="/Menu/classificacio.html"><button class="button">Clasificación</button></a>
+                <a href="/Menu/classificacio.html"><button class="button">Manual</button></a>
             </div>
         </div>
         <button id="menu-btn" class="menu-button">☰</button>
@@ -23,9 +24,20 @@
         <ul id="menu-list">
             <li><a href="/Login/login.html">Iniciar Sesión</a></li>
             <li><a href="/Registre/registre.html">Registrarse</a></li>
-            <li><a href="#">Clasificación</a></li>
-            <li><a href="#">Manual de Instrucciones</a></li>
         </ul>
+    </div>
+
+    <!-- Botón de perfil y ventana modal -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modificar Perfil</h2>
+            <label for="new-username">Nuevo Nombre:</label><br>
+            <input type="text" id="new-username" placeholder="Nuevo nombre de usuario...">
+            <label for="new-password">Nueva Contraseña:</label><br>
+            <input type="password" id="new-password" placeholder="Nueva contraseña...">
+            <button id="save-profile-btn">Guardar Cambios</button>
+        </div>
     </div>
 
     <script src="script.js" defer></script>
