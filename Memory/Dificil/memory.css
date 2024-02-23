@@ -20,8 +20,8 @@ h2, span{
 }
 
 .card {
-    height: 126px;
-    width: 88px;
+    height: 125px;
+    width: 87.8px;
     margin: 2.5px;
     transition: transform 0.6s ease;
     perspective: 1000px;

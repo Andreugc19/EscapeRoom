@@ -1,4 +1,3 @@
-var errors = 0;
 var score = 0;
 var cardList = [
     "Chariot",
@@ -33,9 +32,7 @@ window.onload = function() {
 // Función para reiniciar el juego
 function resetGame() {
     clearInterval(timerInterval);
-    errors = 0;
     score = 0;
-    document.getElementById("errors").innerText = errors;
     document.getElementById("score").innerText = score;
     document.getElementById("board").innerHTML = ''; // Limpiar el tablero
     shuffleCards();
@@ -129,9 +126,7 @@ function update() {
             setTimeout(checkGameEnd, 500);
         } else {
             // No coincidencia
-            errors += 1;
             score -= 5; // Restar 5 puntos por error
-            document.getElementById("errors").innerText = errors;
             document.getElementById("score").innerText = score; // Actualizar la puntuación en el DOM
             setTimeout(() => {
                 card1Selected.querySelector('img').src = "../img/back.jpg";
