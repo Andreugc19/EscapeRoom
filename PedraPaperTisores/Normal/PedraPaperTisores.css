@@ -5,6 +5,23 @@ body {
     background-size: cover;
 }
 
+/* Estilos para el contenedor del temporizador */
+#temporizador-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 18px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+#temporizador-container span{
+    color: black;
+}
+
 #opponent-container {
     border: 2px solid rgb(79, 79, 79);
     background-color: rgb(79, 79, 79);

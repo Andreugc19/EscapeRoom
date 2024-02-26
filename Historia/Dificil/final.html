@@ -7,12 +7,55 @@
 <link rel="stylesheet" href="historia.css">
 </head>
 <body>
+    <!-- Contenedor del temporizador con estilos -->
+    <div id="temporizador-container">
+        <span id="temporizador">Tiempo transcurrido: 0:00 segundos</span>
+    </div>
+
     <div class="contenido">
         <p class="titulo">Enhorabuena! Has conseguido salir sano y salvo de la casa, ya eres libre.</p><br>
         <p class="contenido">Pero ahora te hago una pregunta.</p><br>
         <p class="pregunta">¿Serias capaz de salir de la casa en menos tiempo?</p>
-        <!-- Botón para dirigirse a la página del juego -->
+        <!-- Botón para dirigirse a la página de inicio -->
         <a href="../../index.html"><button class="boton-jugar">Inicio</button></a>
     </div>
+
+    <script>
+        // Verificar si hay un tiempo almacenado en el almacenamiento local
+        let tiempoInicial = localStorage.getItem('tiempoInicial');
+        
+        // Función para actualizar el temporizador
+        function actualizarTemporizador() {
+            // Obtener el elemento del temporizador
+            let temporizadorElement = document.getElementById("temporizador");
+            
+            // Calcular el tiempo transcurrido desde el tiempo inicial hasta ahora
+            let tiempoActual = new Date();
+            let tiempoTranscurrido = Math.floor((tiempoActual - new Date(tiempoInicial)) / 1000);
+
+            // Calcular minutos y segundos
+            let minutos = Math.floor(tiempoTranscurrido / 60);
+            let segundos = tiempoTranscurrido % 60;
+
+            // Formatear el tiempo transcurrido
+            let tiempoFormateado = minutos + " minutos " + segundos + " segundos";
+
+            // Actualizar el contenido del elemento del temporizador
+            temporizadorElement.textContent = "Tiempo transcurrido: " + tiempoFormateado;
+            
+            // Almacenar el tiempo transcurrido en localStorage
+            localStorage.setItem('tiempoFinal', tiempoTranscurrido);
+
+            // Almacenar la clasificación en localStorage
+            let clasificacion = JSON.parse(localStorage.getItem('clasificacion')) || [];
+            let usuario = sessionStorage.getItem('usuario');
+            let dificultad = ''; // Aquí debes obtener la dificultad del juego
+            clasificacion.push({ usuario, dificultad, tiempo: tiempoTranscurrido });
+            localStorage.setItem('clasificacion', JSON.stringify(clasificacion));
+        }
+    
+        // Actualizar el temporizador al cargar la página
+        window.addEventListener('load', actualizarTemporizador);
+    </script>
 </body>
 </html>

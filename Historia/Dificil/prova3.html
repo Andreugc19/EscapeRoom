@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="historia.css">
 </head>
 <body>
+    <!-- Contenedor del temporizador con estilos -->
+    <div id="temporizador-container">
+        <span id="temporizador">Tiempo transcurrido: 0:00 segundos</span>
+    </div>
     <div class="contenido">
         <p class="titulo">Tras salvar a tu viejo amigo decide ir por otro camino, sin embargo a tu izquierda se abre un pasillo y decides ir. A lo lejos se puede observar que se va azercando una criatura extraña que te corta el paso, se trata de un persona con el cuerpo rasgado de sangre.</p><br>
         <p class="contenido">Te habla y te dice que si quieres pasar hacia el otro lado solo tendras 1 posible opcion. Enfrentarte a el en un piedra papel o tijeras, si consigues ganar estaras muy cerca de poder salir de la casa.</p><br>
@@ -14,5 +18,33 @@
         <!-- Botón para dirigirse a la página del juego -->
         <a href="/PedraPaperTisores/Dificil/PedraPaperTisores.html"><button class="boton-jugar">Adelante</button></a>
     </div>
+    <script>
+        // Función para actualizar el temporizador
+        function actualizarTemporizador() {
+            // Obtener el elemento del temporizador
+            let temporizadorElement = document.getElementById("temporizador");
+            
+            // Obtener el tiempo inicial del almacenamiento local
+            let tiempoInicial = localStorage.getItem('tiempoInicial');
+            
+            if (tiempoInicial !== null) {
+                // Calcular el tiempo transcurrido
+                let tiempoTranscurrido = Math.floor((new Date() - new Date(tiempoInicial)) / 1000);
+    
+                // Calcular minutos y segundos
+                let minutos = Math.floor(tiempoTranscurrido / 60);
+                let segundos = tiempoTranscurrido % 60;
+
+                // Añadir un cero delante de los segundos si es necesario
+                segundos = segundos < 10 ? "0" + segundos : segundos;
+    
+                // Actualizar el contenido del elemento del temporizador
+                temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
+            }
+        }
+    
+        // Actualizar el temporizador cada segundo
+        setInterval(actualizarTemporizador, 1000);
+    </script>
 </body>
 </html>

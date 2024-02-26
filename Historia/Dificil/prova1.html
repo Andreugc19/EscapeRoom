@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="historia.css">
 </head>
 <body>
+    <!-- Contenedor del temporizador con estilos -->
+    <div id="temporizador-container">
+        <span id="temporizador">Tiempo transcurrido: 0:00 segundos</span>
+    </div>
     <div class="contenido">
         <p class="titulo">Has despertado y te encuentras en una casa que desconoces. Al levantarte te encuentras una carta que en su interior pone que si quieres salir de la casa deberás pasar una serie de pruebas. En el caso de que no consigas pasar las pruebas o simplemente no quieras hacerlo te quedarás en la casa el resto de tu vida.</p><br>
         <p class="contenido">Tú, confuso por la carta leída, empiezas a mirar a tu alrededor y observas una sala en la que hay unas cartas giradas sobre una mesa, parece ser que se trata del juego del memory. En la carta de antes se observa que aparece un nuevo texto donde se indica que la primera prueba es conseguir encontrar todas las parejas en el menor tiempo posible.</p><br>
@@ -15,5 +19,39 @@
         <a href="/Memory/Dificil/memory.html"><button class="boton-jugar">Adelante</button></a>
     </div>
 
+    <script>
+        // Restablecer el tiempo inicial en la página de historia.html
+        localStorage.removeItem('tiempoInicial');
+    
+        // Función para actualizar el temporizador
+        function actualizarTemporizador() {
+            // Obtener el elemento del temporizador
+            let temporizadorElement = document.getElementById("temporizador");
+            
+            // Verificar si hay un tiempo almacenado en el almacenamiento local
+            let tiempoInicial = localStorage.getItem('tiempoInicial');
+            if (tiempoInicial === null) {
+                // Si no hay tiempo inicial, crear uno nuevo
+                tiempoInicial = new Date();
+                localStorage.setItem('tiempoInicial', tiempoInicial);
+            }
+    
+            // Obtener el tiempo transcurrido en segundos desde el inicio
+            let tiempoTranscurrido = Math.floor((new Date() - new Date(tiempoInicial)) / 1000);
+    
+            // Calcular minutos y segundos
+            let minutos = Math.floor(tiempoTranscurrido / 60);
+            let segundos = tiempoTranscurrido % 60;
+
+            // Añadir un cero delante de los segundos si es necesario
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+    
+            // Actualizar el contenido del elemento del temporizador
+            temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
+        }
+    
+        // Actualizar el temporizador cada segundo
+        setInterval(actualizarTemporizador, 1000);
+    </script>
 </body>
 </html>

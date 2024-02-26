@@ -8,7 +8,8 @@ document.getElementById('registro-form').addEventListener('submit', function(eve
         document.getElementById('mensaje').textContent = 'El nombre de usuario ya está en uso.';
     } else {
         // Almacenar el nuevo usuario en el almacenamiento local
-        localStorage.setItem(nombreUsuario, contrasena);
+        var userData = { username: nombreUsuario, password: contrasena };
+        localStorage.setItem(nombreUsuario, JSON.stringify(userData));
         document.getElementById('mensaje').textContent = 'Usuario registrado con éxito.';
     }
 });

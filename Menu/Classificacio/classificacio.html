@@ -5,45 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clasificación</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 30px;
+            color: #891515;
+        }
+
         table {
+            width: 60%;
+            margin: 20px auto;
             border-collapse: collapse;
-            width: 100%;
+            background-color: #555;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         th, td {
-            border: 1px solid #dddddd;
+            padding: 12px 15px;
             text-align: left;
-            padding: 8px;
+            border-bottom: 1px solid #777;
         }
+
         th {
-            background-color: #f2f2f2;
+            background-color: #444;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #666;
+        }
+
+        tr:hover {
+            background-color: #888;
         }
     </style>
 </head>
 <body>
+    <h1>Clasificación</h1>
 
-<h2>Clasificación</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Tiempo</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-clasificacion">
+        </tbody>
+    </table>
 
-<table>
-  <tr>
-    <th>Posición</th>
-    <th>Nombre</th>
-    <th>Tiempo Final</th>
-    <th>Puntuación</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Jugador 1</td>
-    <td>2:35:20</td>
-    <td>100</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Jugador 2</td>
-    <td>2:40:15</td>
-    <td>95</td>
-  </tr>
-  <!-- Agrega más filas según sea necesario -->
-</table>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los datos de clasificación del almacenamiento local
+            let clasificacion = JSON.parse(localStorage.getItem('clasificacion')) || [];
 
+            // Ordenar la clasificación por tiempo de forma ascendente
+            clasificacion.sort((a, b) => a.tiempo - b.tiempo);
+
+            // Obtener el tbody de la tabla
+            const tbody = document.getElementById('tabla-clasificacion');
+
+            // Función para crear una fila de la tabla
+            function crearFila(usuario, tiempo) {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${usuario}</td>
+                    <td>${formatoTiempo(tiempo)}</td>
+                `;
+                return fila;
+            }
+
+            // Función para formatear el tiempo en minutos y segundos
+            function formatoTiempo(tiempo) {
+                const minutos = Math.floor(tiempo / 60);
+                const segundos = tiempo % 60;
+                return `${minutos}:${segundos < 10 ? '0' + segundos : segundos} segundos`;
+            }
+
+            // Insertar cada entrada de la clasificación en la tabla
+            clasificacion.forEach(({ usuario, tiempo }) => {
+                const fila = crearFila(usuario, tiempo);
+                tbody.appendChild(fila);
+            });
+        });
+    </script>
 </body>
 </html>

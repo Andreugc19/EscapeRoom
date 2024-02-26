@@ -3,7 +3,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     var nombreUsuario = document.getElementById('nombre').value;
     var contrasena = document.getElementById('contrasena').value;
     
-    if (localStorage.getItem(nombreUsuario) === contrasena) {
+    var userData = JSON.parse(localStorage.getItem(nombreUsuario));
+    
+    if (userData && userData.password === contrasena) {
         sessionStorage.setItem('usuario', nombreUsuario);
         window.location.href = '../index.html';
     } else {

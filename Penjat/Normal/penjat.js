@@ -324,3 +324,30 @@ function provideHint() {
 
 // Event listener para el botón "Generar Pista"
 document.getElementById("hint-button").addEventListener("click", provideHint);
+
+// Función para actualizar el temporizador
+function actualizarTemporizador() {
+  // Obtener el elemento del temporizador
+  let temporizadorElement = document.getElementById("temporizador");
+  
+  // Obtener el tiempo inicial del almacenamiento local
+  let tiempoInicial = localStorage.getItem('tiempoInicial');
+  
+  if (tiempoInicial !== null) {
+      // Calcular el tiempo transcurrido
+      let tiempoTranscurrido = Math.floor((new Date() - new Date(tiempoInicial)) / 1000);
+
+      // Calcular minutos y segundos
+      let minutos = Math.floor(tiempoTranscurrido / 60);
+      let segundos = tiempoTranscurrido % 60;
+
+      // Añadir un cero delante de los segundos si es necesario
+      segundos = segundos < 10 ? "0" + segundos : segundos;
+
+      // Actualizar el contenido del elemento del temporizador
+      temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
+  }
+}
+
+// Actualizar el temporizador cada segundo
+setInterval(actualizarTemporizador, 1000);
