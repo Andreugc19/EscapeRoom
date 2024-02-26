@@ -11,54 +11,54 @@ function shuffleArray(array) {
 
 var questionBank= [
     {
-        question : 'Eritrea, which became the 182nd member of the UN in 1993, is in the continent of',
-        option : ['Asia','Africa','Europe','Australia'],
-        answer : 'Africa'
+        question : '¿Qué artista es famoso por sus coloridas representaciones de la vida nocturna de París?',
+        option : ['Jean Dubuffet','Édouard Manet','Alfons Mucha','Henri de Toulouse-Lautrec'],
+        answer : 'Édouard Manet'
     },
     {
-        question : 'Garampani sanctuary is located at',
-        option : ['Junagarh, Gujarat','Diphu, Assam','Kohima, Nagaland','Gangtok, Sikkim'],
-        answer : 'Diphu, Assam'
+        question : '¿Qué artista pintó "El nacimiento de Venus"?',
+        option : ['Filippo Lippi','Sandro Botticelli','Tiziano Vecellio','Masaccio'],
+        answer : 'Sandro Botticelli'
     },
     {
-        question : 'For which of the following disciplines is Nobel Prize awarded?',
-        option : ['Physics and Chemistry','Physiology or Medicine','Literature, Peace and Economics','All of the above'],
-        answer : 'All of the above'
+        question : '¿Cuál es considerada la primera civilización más antigua?',
+        option : ['Grecia','Roma','Egipto','Sumeria'],
+        answer : 'Sumeria'
     },
     {
-        question : 'Hitler party which came into power in 1933 is known as',
-        option : ['Labour Party','Nazi Party','Ku-Klux-Klan','Democratic Party'],
-        answer : 'Nazi Party'
+        question : '¿Qué % representan las tierras emergidas en el planeta Tierra?',
+        option : ['60%','29%','71%','80%'],
+        answer : '29%'
     },
     {
-        question : 'First human heart transplant operation conducted by Dr. Christiaan Barnard on Louis Washkansky, was conducted in',
-        option : ['1967','1968','1958','1922'],
-        answer : '1967'
+        question : '¿Cuánto duró la Guerra de los Cien Años?',
+        option : ['116','110','112','114'],
+        answer : '116'
     },
     {
-        question : 'Question 6?',
-        option : ['Option A','Option B','Option C','Option D'],
-        answer : 'Option A'
+        question : '¿Dónde se encuentra la Casa Rosada?',
+        option : ['Argentina','Uruguay','Peru','Venezuela'],
+        answer : 'Argentina'
     },
     {
-        question : 'Question 7?',
-        option : ['Option A','Option B','Option C','Option D'],
-        answer : 'Option B'
+        question : '¿Quién fue la primera mujer en ganar un premio Nobel?',
+        option : ['Bertha von Suttner','Marie Curie','Selma Lagerlöf','Gabriela Mistral'],
+        answer : 'Marie Curie'
     },
     {
-        question : 'Question 8?',
-        option : ['Option A','Option B','Option C','Option D'],
-        answer : 'Option C'
+        question : '¿Cada cuántos años pasa por la tierra el cometa Halley?',
+        option : ['85 años','65 años','75 años','70 años'],
+        answer : '75 años'
     },
     {
-        question : 'Question 9?',
-        option : ['Option A','Option B','Option C','Option D'],
-        answer : 'Option D'
+        question : '¿Qué estilo de natación no está permitido en los Juegos Olímpicos?',
+        option : ['Mariposa','Revés','Freestyle','Remo para perros'],
+        answer : 'Remo para perros'
     },
     {
-        question : 'Question 10?',
-        option : ['Option A','Option B','Option C','Option D'],
-        answer : 'Option A'
+        question : 'Quien es el primer luchador español en conquistar un título de la UFC?',
+        option : ['Ilia Topuria','Alberto Cerro','Juan Espino','Joel Álvarez'],
+        answer : 'Ilia Topuria'
     }
 ];
 

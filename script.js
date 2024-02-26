@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var nombreUsuario = sessionStorage.getItem('usuario');
+    var menuAbierto = false;
 
     // Función para mostrar el mensaje de bienvenida y los botones correspondientes
     function mostrarBienvenida(nombreUsuario) {
@@ -44,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agregar evento al botón del menú
     document.getElementById('menu-btn').addEventListener('click', function() {
         var menu = document.getElementById('menu');
-        if (menu.style.right === '-250px') {
+        if (!menuAbierto) {
             menu.style.right = '0';
+            menuAbierto = true;
         } else {
             menu.style.right = '-250px';
+            menuAbierto = false;
         }
     });
 
