@@ -28,6 +28,7 @@ body {
     z-index: 1000;
 }
 
+/* Estilos específicos para el texto del temporizador */
 #temporizador-container span {
     color: black;
 }

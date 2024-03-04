@@ -1,202 +1,202 @@
 // Capturar elementos del DOM
-const teclado = document.getElementById("teclado");
-const horas = document.getElementById("horas");
-const minutos = document.getElementById("minutos");
-const segundos = document.getElementById("segundos");
+const teclat = document.getElementById("teclat");
+const hores = document.getElementById("hores");
+const minuts = document.getElementById("minuts");
+const segons = document.getElementById("segons");
 const contador = document.getElementById("contador");
-const errores = document.getElementById("errores");
-const palabra = document.getElementById("palabra");
-const boton = document.getElementById("boton");
-const texto = document.getElementById("texto");
-const cuentaAtras = document.getElementById("cuentaAtras");
+const errors = document.getElementById("errors");
+const paraula = document.getElementById("paraula");
+const boto = document.getElementById("boto");
+const text = document.getElementById("text");
+const compteEnrrere = document.getElementById("compteEnrrere");
 
 // Variables para el Juego
-let palabraAAdvinar = "";
-let caracteresAdivinados = Array(palabraAAdvinar.length);
-let erroresActuales = 0;
-let intentosRestantes = 7;
-let adivinado = false;
-let penalizacionPorTiempo = 0;
-let intervalo;
-let intervaloCuentaAtras;
-let tiempoCuentaAtras = 10;
-let tiempo = new Date();
+let paraulaAEndevinar = "";
+let caractersEndivitats = Array(paraulaAEndevinar.length);
+let varErrors = 0;
+let varIntents = 7;
+let endivinat = false;
+let penalizacioPerTemps = 0;
+let interval;
+let intervalCompteEnrrere;
+let tempsCompteEnrrere = 10;
+let temps = new Date();
 let jsonArray;
 
-tiempo.setHours(0, 0, 0, 0);
+temps.setHours(0, 0, 0, 0);
 
 // Función para iniciar una nueva partida
 function iniciarPartida() {
-  const categorias = ['animales', 'países', 'ciudades', 'profesiones', 'deportes'];
-  const categoriaAleatoria = categorias[Math.floor(Math.random() * categorias.length)];
-  palabraAleatoria(categoriaAleatoria);
-  penalizacionPorTiempo = 0;
+  const categories = ['animals', 'paisos', 'ciutats', 'professions', 'deports'];
+  const categoriaAleatoria = categories[Math.floor(Math.random() * categories.length)];
+  paraulaAleatoria(categoriaAleatoria);
+  penalizacioPerTemps = 0;
   reiniciar();
-  empezar();
-  let teclas = document.querySelectorAll(".letra");
-  teclas.forEach(function (tecla) {
+  començar();
+  let tecles = document.querySelectorAll(".lletra");
+  tecles.forEach(function (tecla) {
     tecla.classList.remove("incorrecta");
     tecla.classList.remove("correcta");
   });
-  texto.innerText = "";
-  palabra.innerText = "";
-  teclado.classList.remove("deshabilitado");
-  erroresActuales = 0;
-  intentosRestantes = 7;
-  contador.innerHTML = intentosRestantes;
-  errores.innerHTML = erroresActuales;
-  reiniciarCuentaAtras();
+  text.innerText = "";
+  paraula.innerText = "";
+  teclat.classList.remove("desabilitat");
+  varErrors = 0;
+  varIntents = 7;
+  contador.innerHTML = varIntents;
+  errors.innerHTML = varErrors;
+  reiniciarCompteEnrrere();
 }
 
 // Función para el cronómetro
-function cronometro() {
-  let horasActuales = tiempo.getHours();
-  let minutosActuales = tiempo.getMinutes();
-  let segundosActuales = tiempo.getSeconds();
+function crono() {
+  let varHores = temps.getHours();
+  let varMinuts = temps.getMinutes();
+  let varSegons = temps.getSeconds();
 
-  segundosActuales += 1;
+  varSegons += 1;
 
-  if (segundosActuales == 60) {
-    segundosActuales = 0;
-    minutosActuales += 1;
+  if (varSegons == 60) {
+    varSegons = 0;
+    varMinuts += 1;
   }
 
-  if (minutosActuales == 60) {
-    minutosActuales = 0;
-    horasActuales += 1;
+  if (varMinuts == 60) {
+    varMinuts = 0;
+    varHores += 1;
   }
 
-  tiempo.setSeconds(segundosActuales);
-  tiempo.setMinutes(minutosActuales);
-  tiempo.setHours(horasActuales);
+  temps.setSeconds(varSegons);
+  temps.setMinutes(varMinuts);
+  temps.setHours(varHores);
 
   // Formatear y mostrar el tiempo en el HTML
-  if (horasActuales < 10) {
-    horasActuales = "0" + horasActuales;
+  if (varHores < 10) {
+    varHores = "0" + varHores;
   }
-  if (minutosActuales < 10) {
-    minutosActuales = "0" + minutosActuales;
+  if (varMinuts < 10) {
+    varMinuts = "0" + varMinuts;
   }
-  if (segundosActuales < 10) {
-    segundosActuales = "0" + segundosActuales;
+  if (varSegons < 10) {
+    varSegons = "0" + varSegons;
   }
 
-  horas.innerHTML = horasActuales;
-  minutos.innerHTML = minutosActuales;
-  segundos.innerHTML = segundosActuales;
+  hores.innerHTML = varHores;
+  minuts.innerHTML = varMinuts;
+  segons.innerHTML = varSegons;
 }
 
 // Función para formatear el tiempo en milisegundos
-function formatTiempo(tiempoEnMilisegundos) {
-  const segundosTotales = Math.floor(tiempoEnMilisegundos / 1000);
-  const minutos = Math.floor((segundosTotales % 3600) / 60);
-  const segundos = segundosTotales % 60;
+function formatTemps(tempsEnMilisegons) {
+  const segonsTotals = Math.floor(tempsEnMilisegons / 1000);
+  const minuts = Math.floor((segonsTotals % 3600) / 60);
+  const segons = segonsTotals % 60;
 
-  const formatoMinutos = minutos < 10 ? '0' + minutos : minutos;
-  const formatoSegundos = segundos < 10 ? '0' + segundos : segundos;
+  const formatMinuts = minuts < 10 ? '0' + minuts : minuts;
+  const formatSegons = segons < 10 ? '0' + segons : segons;
 
-  return `${formatoMinutos}:${formatoSegundos}`;
+  return `${formatMinuts}:${formatSegons}`;
 }
 
 // Función para iniciar el contador regresivo
-function iniciarCuentaAtras() {
-  intervaloCuentaAtras = setInterval(() => {
-    tiempoCuentaAtras--;
-    cuentaAtras.innerText = tiempoCuentaAtras;
+function iniciarCompteEnrrere() {
+  intervalCompteEnrrere = setInterval(() => {
+    tempsCompteEnrrere--;
+    compteEnrrere.innerText = tempsCompteEnrrere;
 
-    if (tiempoCuentaAtras === 0) {
-      intentosRestantes--;
-      contador.innerHTML = intentosRestantes;
-      reiniciarCuentaAtras();
+    if (tempsCompteEnrrere === 0) {
+      varIntents--;
+      contador.innerHTML = varIntents;
+      reiniciarCompteEnrrere();
     }
   }, 1000);
 }
 
 // Función para reiniciar el contador regresivo
-function reiniciarCuentaAtras() {
-  clearInterval(intervaloCuentaAtras);
-  tiempoCuentaAtras = 10;
-  cuentaAtras.innerText = tiempoCuentaAtras;
-  iniciarCuentaAtras();
+function reiniciarCompteEnrrere() {
+  clearInterval(intervalCompteEnrrere);
+  tempsCompteEnrrere = 10;
+  compteEnrrere.innerText = tempsCompteEnrrere;
+  iniciarCompteEnrrere();
 }
 
 // Función para detener el contador regresivo
-function detenerCuentaAtras() {
-  clearInterval(intervaloCuentaAtras);
+function aturarCompteEnrrere() {
+  clearInterval(intervalCompteEnrrere);
 }
 
 // Función para avanzar en el turno del juego al seleccionar una letra
-function avanzarTurno(elemento) {
-  detenerCuentaAtras();
+function avançarTorn(element) {
+  aturarCompteEnrrere();
 
-  penalizacionPorTiempo = 0;
-  adivinado = true;
-  let caracter = elemento.innerText;
-  palabra.innerText = "";
-  let caracteresAdivinadosAnteriores = [...caracteresAdivinados];
+  penalizacioPerTemps = 0;
+  endivinat = true;
+  let caracter = element.innerText;
+  paraula.innerText = "";
+  let caractersEndivitatsAntic = [...caractersEndivitats];
 
-  for (let index = 0; index < palabraAAdvinar.length; index++) {
-    let caracterActual = palabraAAdvinar[index];
+  for (let index = 0; index < paraulaAEndevinar.length; index++) {
+    let caracterActual = paraulaAEndevinar[index];
     if (caracterActual == caracter) {
-      caracteresAdivinados[index] = true;
-      elemento.classList.add("correcta");
+      caractersEndivitats[index] = true;
+      element.classList.add("correcta");
     }
-    if (caracteresAdivinados[index] == true) {
-      palabra.innerText += " " + caracterActual + " ";
+    if (caractersEndivitats[index] == true) {
+      paraula.innerText += " " + caracterActual + " ";
     } else {
-      adivinado = false;
-      palabra.innerText += " _ ";
+      endivinat = false;
+      paraula.innerText += " _ ";
     }
   }
 
   if (
-    JSON.stringify(caracteresAdivinados) ==
-    JSON.stringify(caracteresAdivinadosAnteriores)
+    JSON.stringify(caractersEndivitats) ==
+    JSON.stringify(caractersEndivitatsAntic)
   ) {
-    elemento.classList.add("incorrecta");
-    intentosRestantes--;
-    erroresActuales++;
-    contador.innerHTML = intentosRestantes;
-    errores.innerHTML = erroresActuales;
+    element.classList.add("incorrecta");
+    varIntents--;
+    varErrors++;
+    contador.innerHTML = varIntents;
+    errors.innerHTML = varErrors;
   }
 
-  reiniciarCuentaAtras();
+  reiniciarCompteEnrrere();
   acabarPartida();
 }
 
 // Función para terminar la partida y mostrar el resultado
 function acabarPartida() {
   const popup = document.getElementById("popup");
-  const popupTitulo = document.getElementById("popup-titulo");
-  const popupMensaje = document.getElementById("popup-mensaje");
+  const popupTitol = document.getElementById("popup-titol");
+  const popupMissatge = document.getElementById("popup-missatge");
 
-  if (adivinado || intentosRestantes === 0) {
-    detener();
-    detenerCuentaAtras();
-    teclado.classList.add("deshabilitado");
-    boton.disabled = false;
+  if (endivinat || varIntents === 0) {
+    aturar();
+    aturarCompteEnrrere();
+    teclat.classList.add("desabilitat");
+    boto.disabled = false;
 
-    if (adivinado) {
-      const estadisticas = {
-        palabra: palabraAAdvinar,
-        errores: erroresActuales,
-        tiempo: formatTiempo(tiempo.getTime()),
+    if (endivinat) {
+      const estadistiques = {
+        word: paraulaAEndevinar,
+        errors: varErrors,
+        time: formatTemps(temps.getTime()),
       };
-      const historialEstadisticas = JSON.parse(localStorage.getItem('historialEstadisticas')) || [];
-      historialEstadisticas.push(estadisticas);
-      localStorage.setItem('historialEstadisticas', JSON.stringify(historialEstadisticas));
+      const historialEstadistiques = JSON.parse(localStorage.getItem('historialEstadistiques')) || [];
+      historialEstadistiques.push(estadistiques);
+      localStorage.setItem('historialEstadistiques', JSON.stringify(historialEstadistiques));
 
-      popupTitulo.innerHTML = "¡Felicitaciones, has ganado!";
-      popupMensaje.innerHTML = "¡Has adivinado la palabra correctamente!<br><br>ESTADÍSTICAS<br>Palabra: " + estadisticas.palabra + "<br>Errores: " + estadisticas.errores + "<br>Tiempo: " + estadisticas.tiempo;
+      popupTitol.innerHTML = "¡Felicitaciones, has ganado!";
+      popupMissatge.innerHTML = "¡Has adivinado la palabra correctamente!<br><br>ESTADÍSTICAS<br>Palabra: " + estadistiques.word + "<br>Errores: " + estadistiques.errors + "<br>Tiempo: " + estadistiques.time;
 
-      botonCerrar.style.display = "none";
+      botoTancar.style.display = "none";
 
       setTimeout(() => {
         window.location.href = "../../Historia/Normal/prova3.html";
       }, 2000);
     } else {
-      popupTitulo.innerHTML = "Has perdido";
-      popupMensaje.innerHTML = "La palabra a adivinar era: " + palabraAAdvinar;
+      popupTitol.innerHTML = "Has perdido";
+      popupMissatge.innerHTML = "La palabra a adivinar era: " + paraulaAEndevinar;
       setTimeout(() => {
         window.location.reload();
       }, 2000);
@@ -207,83 +207,83 @@ function acabarPartida() {
 }
 
 // Función para comenzar el juego
-function empezar() {
-  intervalo = setInterval(cronometro, 1000);
+function començar() {
+  interval = setInterval(crono, 1000);
 }
 
 // Función para reiniciar el cronómetro
 function reiniciar() {
-  tiempo.setHours(0, 0, 0, 0);
-  horas.innerHTML = "00";
-  minutos.innerHTML = "00";
-  segundos.innerHTML = "00";
+  temps.setHours(0, 0, 0, 0);
+  hores.innerHTML = "00";
+  minuts.innerHTML = "00";
+  segons.innerHTML = "00";
 }
 
 // Función para detener el cronómetro
-function detener() {
-  clearInterval(intervalo);
+function aturar() {
+  clearInterval(interval);
 }
 
 // Función para seleccionar una palabra aleatoria de una categoría
-function palabraAleatoria(categoria) {
-  obtenerJSON((error, datos) => {
-    gestionarRespuesta(error, datos);
-    palabraAAdvinar = jsonArray[Math.floor(Math.random() * jsonArray.length)];
-    caracteresAdivinados = Array(palabraAAdvinar.length);
+function paraulaAleatoria(categoria) {
+  obtenirJSON((error, dades) => {
+    gestionaResposta(error, dades);
+    paraulaAEndevinar = jsonArray[Math.floor(Math.random() * jsonArray.length)];
+    caractersEndivitats = Array(paraulaAEndevinar.length);
 
-    console.log(palabraAAdvinar);
+    console.log(paraulaAEndevinar);
 
-    for (let index = 0; index < palabraAAdvinar.length; index++) {
-      caracteresAdivinados[index] = false;
-      palabra.innerText += " _ ";
+    for (let index = 0; index < paraulaAEndevinar.length; index++) {
+      caractersEndivitats[index] = false;
+      paraula.innerText += " _ ";
     }
   }, "JSON/" + categoria + ".json");
 }
 
 // Función para obtener datos JSON mediante una solicitud XMLHttpRequest
-const obtenerJSON = (callback, fuente) => {
-  const peticion = new XMLHttpRequest();
+const obtenirJSON = (callback, source) => {
+  const peticio = new XMLHttpRequest();
 
-  peticion.addEventListener("readystatechange", () => {
-    if (peticion.readyState == 4 && peticion.status == 200) {
-      const respuesta = JSON.parse(peticion.responseText);
+  peticio.addEventListener("readystatechange", () => {
+    if (peticio.readyState == 4 && peticio.status == 200) {
+      const respuesta = JSON.parse(peticio.responseText);
       callback(undefined, respuesta);
-    } else if (peticion.readyState === 4) {
-      callback("No se han podido obtener los datos", undefined);
+    } else if (peticio.readyState === 4) {
+      callback("No se pudieron obtener los datos", undefined);
     }
   });
 
-  peticion.open("GET", fuente);
-  peticion.send();
+  peticio.open("GET", source);
+  peticio.send();
 };
 
 // Función para gestionar la respuesta JSON
-function gestionarRespuesta(error, datos) {
+function gestionaResposta(error, dades) {
   if (error) {
     console.log(error);
   } else {
-    jsonArray = datos;
+    jsonArray = dades;
   }
 }
 
-// Añadir evento al botón de cerrar del popup
-const botonCerrar = document.getElementById("boton-cerrar");
-botonCerrar.addEventListener("click", () => {
+// Agregar evento al botón de cerrar del popup
+const botoTancar = document.getElementById("boto-tancar");
+botoTancar.addEventListener("click", () => {
   popup.style.display = "none";
   window.location.reload();
 });
 
-// Añadir evento al botón de iniciar
-boton.addEventListener("click", (e) => {
-  boton.disabled = true;
+// Agregar evento al botón de inicio
+boto.addEventListener("click", (e) => {
+  boto.disabled = true;
   iniciarPartida();
 });
 
-// Añadir evento al teclado
-teclado.addEventListener("click", (e) => {
-  let elemento = e.target;
-  if (elemento.classList.contains("letra")) {
-    avanzarTurno(elemento);
+// Agregar evento al teclado
+teclat.addEventListener("click", (e) => {
+  let element = e.target;
+  if (element.classList.contains("lletra")) {
+    avançarTorn(element);
   }
 });
 
@@ -322,7 +322,7 @@ document.getElementById("boton-pista").addEventListener("click", darPista);
 
 // Función para actualizar el temporizador
 function actualizarTemporizador() {
-  let elementoTemporizador = document.getElementById("temporizador");
+  let temporizadorElement = document.getElementById("temporizador");
   
   let tiempoInicial = localStorage.getItem('tiempoInicial');
   
@@ -334,7 +334,7 @@ function actualizarTemporizador() {
 
       segundos = segundos < 10 ? "0" + segundos : segundos;
 
-      elementoTemporizador.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
+      temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
   }
 }
 

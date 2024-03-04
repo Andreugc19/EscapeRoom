@@ -34,25 +34,25 @@ body {
 }
 
 /* Estilos para los títulos */
-.titulo {
+.titol {
     font-size: 25px;
 }
 
 /* Estilos para el contenedor principal */
-.contenedor {
+.contenidor {
     margin-bottom: 30px;
     perspective: 1000px;
 }
 
 /* Estilos para el teclado */
-.teclado {
+.teclat {
     display: flex;
     justify-content: center;    
     font-size: 35px;
 }
 
 /* Estilos para las letras del teclado */
-.letra {
+.lletra {
     background-color: rgb(33, 31, 31);
     height: 40px;
     width: 43px;
@@ -64,19 +64,19 @@ body {
 }
 
 /* Estilos para letras correctas */
-.letra.correcta {
+.lletra.correcta {
     background-color: rgb(25, 190, 25);
     pointer-events:none;
 }
 
 /* Estilos para letras incorrectas */
-.letra.incorrecta {
+.lletra.incorrecta {
     background-color: rgb(240, 36, 36);
     pointer-events:none;
 }
 
 /* Estilos para las letras del teclado cuando no son incorrectas ni correctas al pasar el cursor */
-.letra:not(.incorrecta, .correcta):hover {
+.lletra:not(.incorrecta, .correcta):hover {
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -90,19 +90,19 @@ p.text {
 }
 
 /* Estilos para los intentos restantes */
-.intentos p.text span {
+.intents p.text span {
     color: rgb(0, 0, 0);
 }
 
 /* Estilos para la palabra a adivinar */
-.palabra {
+.paraula {
     display: flex;
     justify-content: center;
     font-size: 50px;
 }
 
 /* Estilos para el botón */
-.boton {
+.boto {
     background-color: rgb(33, 31, 31);
     color: white;
     margin: 5px;
@@ -114,7 +114,7 @@ p.text {
 }
 
 /* Estilos para deshabilitar elementos */
-.deshabilitado {
+.desabilitat {
     pointer-events:none;
 }
 
@@ -171,18 +171,18 @@ p.text {
 }
   
 /* Estilos para el título del popup */
-.popup-titulo {
+.popup-titol {
     font-size: 24px;
     margin-bottom: 10px;
 }
   
 /* Estilos para el mensaje del popup */
-.popup-mensaje {
+.popup-missatge {
     font-size: 18px;
 }
 
 /* Estilos para el botón de cerrar */
-.boton-cerrar {
+.boto-tancar {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -192,6 +192,6 @@ p.text {
 }
   
 /* Estilos para el botón de cerrar al pasar el cursor */
-.boton-cerrar:hover {
+.boto-tancar:hover {
     color: white;
 }
