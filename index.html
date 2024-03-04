@@ -8,18 +8,22 @@
 </head>
 <body>
     <div class="container">
+        <!-- Encabezado -->
         <div class="header">
             <img src="/Imatges/titulo.png" alt="Escape Room" class="title-image">
             <div class="buttons-container">
+                <!-- Botones de dificultad y otras opciones -->
                 <a href="/Historia/Normal/prova1.html"><button class="button">Normal</button></a>
-                <a href="/Historia/Dificil/prova1.html"><button class="button">Dificil</button></a>
+                <a href="/Historia/Dificil/prova1.html"><button class="button">Difícil</button></a>
                 <a href="/Menu/Classificacio/classificacio.html"><button class="button">Clasificación</button></a>
                 <a href="/Menu/Manual/manual.html"><button class="button">Manual</button></a>
             </div>
         </div>
+        <!-- Botón de menú -->
         <button id="menu-btn" class="menu-button">☰</button>
     </div>
 
+    <!-- Menú lateral -->
     <div id="menu" class="menu">
         <ul id="menu-list">
             <li><a href="/Login/login.html">Iniciar Sesión</a></li>
@@ -30,6 +34,7 @@
     <!-- Botón de perfil y ventana modal -->
     <div id="profile-modal" class="modal">
         <div class="modal-content">
+            <!-- Botón para cerrar la ventana modal -->
             <span class="close">&times;</span>
             <h2>Modificar Perfil</h2>
             <label for="new-username">Nuevo Nombre:</label><br>
@@ -40,6 +45,7 @@
         </div>
     </div>
 
+    <!-- Script JavaScript -->
     <script src="script.js" defer></script>
 </body>
 </html>

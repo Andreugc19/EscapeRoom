@@ -1,7 +1,9 @@
+/* Reset de estilos para todos los elementos */
 * {
     box-sizing: border-box;
 }
 
+/* Estilos generales para el cuerpo del documento */
 body {
     background-color: #2d3335;
     display: flex;
@@ -23,29 +25,34 @@ body {
     border-radius: 5px;
     margin: 20px;
     font-size: 18px;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
 }
 
+/* Estilos específicos para el texto del temporizador */
 #temporizador-container span{
     color: black;
 }
 
-.titol {
+/* Estilos para los títulos */
+.titulo {
     font-size: 25px;
 }
 
-.contenidor {
+/* Estilos para el contenedor principal */
+.contenedor {
     margin-bottom: 30px;
     perspective: 1000px;
 }
 
-.teclat {
+/* Estilos para el teclado */
+.teclado {
     display: flex;
     justify-content: center;    
     font-size: 35px;
 }
 
-.lletra {
+/* Estilos para las letras del teclado */
+.letra {
     background-color: rgb(33, 31, 31);
     height: 40px;
     width: 43px;
@@ -56,21 +63,25 @@ body {
     border-radius: 5px;
 }
 
-.lletra.correcta {
+/* Estilos para letras correctas */
+.letra.correcta {
     background-color: rgb(25, 190, 25);
     pointer-events:none;
 }
 
-.lletra.incorrecta {
+/* Estilos para letras incorrectas */
+.letra.incorrecta {
     background-color: rgb(240, 36, 36);
     pointer-events:none;
 }
 
-.lletra:not(.incorrecta, .correcta):hover {
+/* Estilos para las letras del teclado cuando no son incorrectas ni correctas al pasar el cursor */
+.letra:not(.incorrecta, .correcta):hover {
     cursor: pointer;
     transform: scale(1.2);
 }
 
+/* Estilos para los párrafos de texto */
 p.text {
     margin-top: 35px;
     margin-bottom: 10px;
@@ -78,17 +89,20 @@ p.text {
     text-align: center;
 }
 
-.intents p.text span {
+/* Estilos para los intentos restantes */
+.intentos p.text span {
     color: rgb(0, 0, 0);
 }
 
-.paraula {
+/* Estilos para la palabra a adivinar */
+.palabra {
     display: flex;
     justify-content: center;
     font-size: 50px;
 }
 
-.boto{
+/* Estilos para el botón */
+.boton {
     background-color: rgb(33, 31, 31);
     color: white;
     margin: 5px;
@@ -99,21 +113,25 @@ p.text {
     border: none;
 }
 
-.desabilitat{
+/* Estilos para deshabilitar elementos */
+.deshabilitado {
     pointer-events:none;
 }
 
+/* Estilos para el contador regresivo */
 #compteEnrrere {
     display: flex;
     justify-content: center;
 }
 
+/* Estilos para el contenedor de botones en la esquina */
 .corner-button-container {
     position: fixed;
     top: 20px;
     right: 20px;
   }
   
+  /* Estilos para el botón de pista */
   .hint-button {
     background-color: #171717;
     color: white;
@@ -124,10 +142,12 @@ p.text {
     cursor: pointer;
   }
   
+  /* Estilos para el botón de pista al pasar el cursor */
   .hint-button:hover {
     background-color: #000000;
   }
 
+/* Estilos para el popup */
 .popup {
     display: none;
     position: fixed;
@@ -139,6 +159,7 @@ p.text {
     z-index: 1000;
 }
   
+/* Estilos para el contenido del popup */
 .popup-content {
     background: #343636;
     padding: 40px;
@@ -149,16 +170,19 @@ p.text {
     position: relative;
 }
   
-.popup-titol {
+/* Estilos para el título del popup */
+.popup-titulo {
     font-size: 24px;
     margin-bottom: 10px;
 }
   
-.popup-missatge {
+/* Estilos para el mensaje del popup */
+.popup-mensaje {
     font-size: 18px;
 }
 
-.boto-tancar {
+/* Estilos para el botón de cerrar */
+.boton-cerrar {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -167,6 +191,7 @@ p.text {
     color: white;
 }
   
-.boto-tancar:hover {
+/* Estilos para el botón de cerrar al pasar el cursor */
+.boton-cerrar:hover {
     color: white;
 }

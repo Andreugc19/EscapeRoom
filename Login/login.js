@@ -5,6 +5,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     
     var userData = JSON.parse(localStorage.getItem(nombreUsuario));
     
+    // Comprobar si la contraseña y usuario coinciden
     if (userData && userData.password === contrasena) {
         sessionStorage.setItem('usuario', nombreUsuario);
         window.location.href = '../index.html';

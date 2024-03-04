@@ -41,7 +41,19 @@ Modificacions per a que generi una paraula aleatoria sense elegir categoria, i i
 Implementacio i funcionalitat de pistes acabat, començament del darrer joc, quiz (5 preguntes, minim 3 correctes)
 
 20/02: 
-Implementacio y finalitzacion de mecanisme de 5 preguntes y minim 3 acertades
+Implementacio i finalitzacio de mecanisme de 5 preguntes i minim 3 acertades
 
 21/02: 
 Implementar dificultat dicifil: tots els jocs sense pistes, quiz: 10 preguntes / minim 7 correctes, pedra-paper-tisores: 1r arribar 5 victories, memory: 10 parelles <1 minut 
+
+26/02: 
+Implementacio de un cronometre des de l'inici de la partida i que aturi al acabar
+
+27/02: 
+Finalitzacio de cronomete per la aprtida i creacio de clasificacio amb informacio recollida del localstorage per poder veure a l'usuari i el seu temps
+
+28/02: 
+Millorar estils css de diferents pagines dels jocs
+
+4/03:
+Implementar boto per tornar a la pagina d'inici a les pagines de login i registre

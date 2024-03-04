@@ -1,7 +1,9 @@
+/* Establecer el modelo de caja en todos los elementos */
 * {
     box-sizing: border-box;
 }
 
+/* Estilos para el cuerpo de la página */
 body {
     background-color: #2d3335;
     display: flex;
@@ -23,28 +25,32 @@ body {
     border-radius: 5px;
     margin: 20px;
     font-size: 18px;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
 }
 
-#temporizador-container span{
+#temporizador-container span {
     color: black;
 }
 
+/* Estilos para el título */
 .titol {
     font-size: 25px;
 }
 
+/* Estilos para el contenedor */
 .contenidor {
     margin-bottom: 30px;
     perspective: 1000px;
 }
 
+/* Estilos para el teclado */
 .teclat {
     display: flex;
     justify-content: center;    
     font-size: 35px;
 }
 
+/* Estilos para las teclas del teclado */
 .lletra {
     background-color: rgb(33, 31, 31);
     height: 40px;
@@ -56,21 +62,25 @@ body {
     border-radius: 5px;
 }
 
+ /* Evitar eventos de clic en teclas correctas */
 .lletra.correcta {
     background-color: rgb(25, 190, 25);
-    pointer-events:none;
+    pointer-events: none;
 }
 
+ /* Evitar eventos de clic en teclas incorrectas */
 .lletra.incorrecta {
     background-color: rgb(240, 36, 36);
-    pointer-events:none;
+    pointer-events: none;
 }
 
+/* Cambiar el cursor al pasar por encima de las teclas no incorrectas ni correctas */
 .lletra:not(.incorrecta, .correcta):hover {
-    cursor: pointer;
+    cursor: pointer; 
     transform: scale(1.2);
 }
 
+/* Estilos para el texto */
 p.text {
     margin-top: 35px;
     margin-bottom: 10px;
@@ -78,17 +88,20 @@ p.text {
     text-align: center;
 }
 
+/* Estilos para el texto de los intentos */
 .intents p.text span {
     color: rgb(0, 0, 0);
 }
 
+/* Estilos para la palabra a adivinar */
 .paraula {
     display: flex;
     justify-content: center;
     font-size: 50px;
 }
 
-.boto{
+/* Estilos para el botón */
+.boto {
     background-color: rgb(33, 31, 31);
     color: white;
     margin: 5px;
@@ -99,21 +112,25 @@ p.text {
     border: none;
 }
 
-.desabilitat{
-    pointer-events:none;
+/* Estilos para deshabilitar elementos */
+.desabilitat {
+    pointer-events: none;
 }
 
+/* Estilos para el contador regresivo */
 #compteEnrrere {
     display: flex;
     justify-content: center;
 }
 
+/* Estilos para el contenedor de botones en la esquina */
 .corner-button-container {
     position: fixed;
     top: 20px;
     right: 20px;
-  }
+}
 
+/* Estilos para el popup */
 .popup {
     display: none;
     position: fixed;
@@ -125,6 +142,7 @@ p.text {
     z-index: 1000;
 }
   
+/* Estilos para el contenido del popup */
 .popup-content {
     background: #343636;
     padding: 40px;
@@ -135,15 +153,18 @@ p.text {
     position: relative;
 }
   
+/* Estilos para el título del popup */
 .popup-titol {
     font-size: 24px;
     margin-bottom: 10px;
 }
   
+/* Estilos para el mensaje del popup */
 .popup-missatge {
     font-size: 18px;
 }
 
+/* Estilos para el botón de cerrar del popup */
 .boto-tancar {
     position: fixed;
     top: 10px;

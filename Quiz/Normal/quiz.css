@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Estilos del cuerpo */
 body{
     font-family: sans-serif;
@@ -23,12 +24,12 @@ body{
     border-radius: 5px;
     margin: 20px;
     font-size: 18px;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
 }
 
 /* Estilos del contenedor de preguntas */
 .questions{
-    margin: 3rem auto;
+    margin: 10rem auto 3rem;
     width: 90vw;
     padding: 2rem;
     background: rgba(101, 101, 101, 0.45);
@@ -36,10 +37,12 @@ body{
     cursor: default;
     border-radius: 1rem;
 }
+
 /* Estilos de la pregunta */
 #question{
     margin-bottom: 1rem;
 }
+
 /* Estilos de las opciones */
 .option{
     margin-bottom: 0.5rem;
@@ -67,21 +70,26 @@ ol{
     padding: 0 1.5rem;
     color: rgb(255, 255, 255);
 }
+
 /* Estilos de los elementos span dentro de las opciones */
 span{
     display: block;
     padding: 0.1rem 0.7rem;
     border-radius: 1rem;
 }
+
 /* Estilos de la estadística */
 #stat{
     margin-top: 1.5rem;
     color: rgb(216, 216, 216);
 }
+
 /* Estilos de los botones */
 .buttons{
     text-align: center;
+    margin-top: 1rem;
 }
+
 button{
     padding: 0.2rem 1.5rem;
     border: none;
@@ -91,6 +99,7 @@ button{
     color: rgba(255, 255, 255, 0.82);
     background: rgba(48, 48, 48, 0.98);
 }
+
 /* Estilos del marcador de puntaje y del banco de respuestas */
 #scoreboard,#answerBank{
     width: 20rem;
@@ -102,20 +111,24 @@ button{
     top: 5rem;
     display: none;
 }
+
 /* Estilos del título del puntaje */
 #score-title{
     margin: 1rem 0;
 }
+
 /* Estilos del puntaje */
 #score{
     font-size: 2.5rem;
 }
+
 /* Estilos de la lista ordenada dentro del banco de respuestas */
 #answerBank li{
     text-align: left;
     margin-bottom: 0.2rem;
     font-size: larger;
 }
+
 /* Estilos del contenedor de popup */
 .popup-container {
     display: none;
@@ -127,6 +140,7 @@ button{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
 /* Estilos del popup */
 .popup {
     position: absolute;

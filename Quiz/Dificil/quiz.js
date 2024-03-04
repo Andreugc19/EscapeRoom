@@ -91,6 +91,7 @@ function displayQuestion(){
     stat.innerHTML= "Question"+' '+(i+1)+' '+'of'+' '+questionBank.length;
 }
 
+// Funcion para calcular las repuestas correctas e incorrectas
 function calcScore(e){
     if(e.innerHTML===questionBank[i].answer && score<questionBank.length)
     {
@@ -103,6 +104,7 @@ function calcScore(e){
     setTimeout(nextQuestion,300);
 }
 
+// Funcion para pasar a la sigeinte pregunta
 function nextQuestion(){
     if(i<questionBank.length-1)
     {
@@ -130,10 +132,12 @@ function nextQuestion(){
 
 next.addEventListener('click',nextQuestion);
 
+// Funcion para volver al quiz
 function backToQuiz(){
     location.reload();
 }
 
+// Funcion para enseñar el popup (menjase)
 function showPopup(message) {
     var popupContainer = document.getElementById("popup-container");
     var popupMessage = document.getElementById("popup-message");
@@ -155,24 +159,18 @@ displayQuestion();
 
 // Función para actualizar el temporizador
 function actualizarTemporizador() {
-    // Obtener el elemento del temporizador
     let temporizadorElement = document.getElementById("temporizador");
     
-    // Obtener el tiempo inicial del almacenamiento local
     let tiempoInicial = localStorage.getItem('tiempoInicial');
     
     if (tiempoInicial !== null) {
-        // Calcular el tiempo transcurrido
         let tiempoTranscurrido = Math.floor((new Date() - new Date(tiempoInicial)) / 1000);
 
-        // Calcular minutos y segundos
         let minutos = Math.floor(tiempoTranscurrido / 60);
         let segundos = tiempoTranscurrido % 60;
 
-        // Añadir un cero delante de los segundos si es necesario
         segundos = segundos < 10 ? "0" + segundos : segundos;
 
-        // Actualizar el contenido del elemento del temporizador
         temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
     }
 }

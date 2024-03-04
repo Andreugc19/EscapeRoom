@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="registre.css">
 </head>
 <body>
+    <!-- Botón para ir a index.html -->
+    <a href="/index.html" class="back-button">&#8592; Volver a Inicio</a>
+    
     <div class="container">
         <h2>Registro</h2>
+        <!-- Formulario de registro -->
         <form id="registro-form">
             <input type="text" id="nombre" placeholder="Nombre del usuario" required>
             <input type="password" id="contrasena" placeholder="Contraseña" required>
             <button type="submit" class="button">Registrarse</button>
         </form>
+        <!-- Mensaje de respuesta del servidor -->
         <div id="mensaje"></div>
-        <a href="../index.html">Volver al inicio</a>
+        <!-- Enlace para volver al inicio -->
+        <a href="/Login/login.html">Iniciar Sesion</a>
     </div>
 
     <script src="registre.js"></script>

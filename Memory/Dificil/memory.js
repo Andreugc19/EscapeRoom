@@ -19,7 +19,7 @@ var columns = 5;
 var card1Selected;
 var card2Selected;
 var timerInterval;
-var timeLimit = 60; // Tiempo por defecto (en segundos)
+var timeLimit = 60; 
 
 // Función para iniciar el juego
 window.onload = function() {
@@ -34,13 +34,14 @@ function resetGame() {
     clearInterval(timerInterval);
     score = 0;
     document.getElementById("score").innerText = score;
-    document.getElementById("board").innerHTML = ''; // Limpiar el tablero
+    document.getElementById("board").innerHTML = ''; 
     shuffleCards();
     startGame();
     hideCards();
     startTimer();
 }
 
+// Funcion de barajar las cartas
 function shuffleCards() {
     cardSet = cardList.concat(cardList);
     console.log(cardSet);
@@ -54,6 +55,7 @@ function shuffleCards() {
     console.log(cardSet);
 }
 
+// Funcion de empezar juego
 function startGame() {
     for (let r = 0; r < rows; r++) {
         let row = [];
@@ -61,7 +63,7 @@ function startGame() {
             let cardImg = cardSet.pop();
             row.push(cardImg);
 
-            let card = document.createElement("div"); // Cambiado de img a div
+            let card = document.createElement("div"); 
             card.id = r.toString() + "-" + c.toString();
             card.classList.add("card");
 
@@ -69,7 +71,7 @@ function startGame() {
             let cardImgElement = document.createElement("img");
             cardImgElement.src = "../img/back.jpg";
             cardImgElement.classList.add("card-img");
-            cardImgElement.setAttribute("data-card", cardImg); // Guardar el tipo de carta como atributo de datos
+            cardImgElement.setAttribute("data-card", cardImg);
             card.appendChild(cardImgElement);
 
             card.addEventListener("click", selectCard);
@@ -82,6 +84,7 @@ function startGame() {
     setTimeout(hideCards, 1000);
 }
 
+// Funcion de ocultar carta
 function hideCards() {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
@@ -91,6 +94,7 @@ function hideCards() {
     }
 }
 
+// Funcion de seleccionar las cartas
 function selectCard() {
     if (!card1Selected && !card2Selected && !this.classList.contains("flipped")) {
         card1Selected = this;
@@ -99,7 +103,7 @@ function selectCard() {
         let c = parseInt(coords[1]);
         card1Selected.querySelector('img').src = "../img/" + board[r][c] + ".jpg";
         card1Selected.classList.add("flipped");
-        return; // Salir de la función después de seleccionar la primera carta
+        return; 
     }
 
     if (!card2Selected && this !== card1Selected && !this.classList.contains("flipped")) {
@@ -113,6 +117,7 @@ function selectCard() {
     }
 }
 
+// Funcion de actualizar las cartas
 function update() {
     if (card1Selected && card2Selected) {
         if (card1Selected.querySelector('img').src === card2Selected.querySelector('img').src) {
@@ -121,13 +126,13 @@ function update() {
             card2Selected.classList.add("matched");
             card1Selected = null;
             card2Selected = null;
-            score += 20; // Sumar 20 puntos por coincidencia
-            document.getElementById("score").innerText = score; // Actualizar la puntuación en el DOM
+            score += 20;
+            document.getElementById("score").innerText = score;
             setTimeout(checkGameEnd, 500);
         } else {
             // No coincidencia
-            score -= 5; // Restar 5 puntos por error
-            document.getElementById("score").innerText = score; // Actualizar la puntuación en el DOM
+            score -= 5;
+            document.getElementById("score").innerText = score;
             setTimeout(() => {
                 card1Selected.querySelector('img').src = "../img/back.jpg";
                 card2Selected.querySelector('img').src = "../img/back.jpg";
@@ -140,6 +145,7 @@ function update() {
     }
 }
 
+// Funcion de empezar el tiempo
 function startTimer() {
     let seconds = timeLimit;
     timerInterval = setInterval(() => {
@@ -155,6 +161,7 @@ function startTimer() {
     }, 1000);
 }
 
+// Funcion de popups de victoria y derrota
 function showWinPopup() {
     var popupContainer = document.getElementById("popup-container");
     var popupMessage = document.getElementById("popup-message");
@@ -175,6 +182,7 @@ function showLossPopup() {
     }, 2000);
 }
 
+// Funcion de juego acabado
 function checkGameEnd() {
     let allMatched = true;
     document.querySelectorAll('.card').forEach(card => {
@@ -190,24 +198,18 @@ function checkGameEnd() {
 
 // Función para actualizar el temporizador
 function actualizarTemporizador() {
-    // Obtener el elemento del temporizador
     let temporizadorElement = document.getElementById("temporizador");
     
-    // Obtener el tiempo inicial del almacenamiento local
     let tiempoInicial = localStorage.getItem('tiempoInicial');
     
     if (tiempoInicial !== null) {
-        // Calcular el tiempo transcurrido
         let tiempoTranscurrido = Math.floor((new Date() - new Date(tiempoInicial)) / 1000);
 
-        // Calcular minutos y segundos
         let minutos = Math.floor(tiempoTranscurrido / 60);
         let segundos = tiempoTranscurrido % 60;
 
-        // Añadir un cero delante de los segundos si es necesario
         segundos = segundos < 10 ? "0" + segundos : segundos;
 
-        // Actualizar el contenido del elemento del temporizador
         temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
     }
 }

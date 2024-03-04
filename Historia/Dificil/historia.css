@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     margin: 0;
     padding: 0;
@@ -24,6 +25,7 @@ body {
     z-index: 1000;
 }
 
+/* Estilo de titulos y contenendores */
 .contenido {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -46,12 +48,14 @@ body {
     width: 60%;
 }
 
+/* Estilo de pregunta */
 .pregunta {
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
 }
 
+/* Estilo de boton para jugar */
 .boton-jugar {
     background-color: #383938;
     color: white;

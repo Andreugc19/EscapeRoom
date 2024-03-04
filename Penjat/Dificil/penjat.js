@@ -1,4 +1,4 @@
-// Capturar elements del DOM
+// Capturar elementos del DOM
 const teclat = document.getElementById("teclat");
 const hores = document.getElementById("hores");
 const minuts = document.getElementById("minuts");
@@ -10,7 +10,7 @@ const boto = document.getElementById("boto");
 const text = document.getElementById("text");
 const compteEnrrere = document.getElementById("compteEnrrere");
 
-// Variables per el Joc
+// Variables para el Juego
 let paraulaAEndevinar = "";
 let caractersEndivitats = Array(paraulaAEndevinar.length);
 let varErrors = 0;
@@ -25,9 +25,7 @@ let jsonArray;
 
 temps.setHours(0, 0, 0, 0);
 
-/* FUNCIONS */
-
-// Funcio per iniciar una nova partida
+// Función para iniciar una nueva partida
 function iniciarPartida() {
   const categories = ['animals', 'paisos', 'ciutats', 'professions', 'deports'];
   const categoriaAleatoria = categories[Math.floor(Math.random() * categories.length)];
@@ -50,7 +48,7 @@ function iniciarPartida() {
   reiniciarCompteEnrrere();
 }
 
-// Funcio per el cronometre
+// Función para el cronómetro
 function crono() {
   let varHores = temps.getHours();
   let varMinuts = temps.getMinutes();
@@ -72,7 +70,7 @@ function crono() {
   temps.setMinutes(varMinuts);
   temps.setHours(varHores);
 
-  // Formatejar i mostrar el temps en el HTML
+  // Formatear y mostrar el tiempo en el HTML
   if (varHores < 10) {
     varHores = "0" + varHores;
   }
@@ -88,7 +86,7 @@ function crono() {
   segons.innerHTML = varSegons;
 }
 
-// Funcio per formatejar el temp en milisegons
+// Función para formatear el tiempo en milisegundos
 function formatTemps(tempsEnMilisegons) {
   const segonsTotals = Math.floor(tempsEnMilisegons / 1000);
   const minuts = Math.floor((segonsTotals % 3600) / 60);
@@ -100,7 +98,7 @@ function formatTemps(tempsEnMilisegons) {
   return `${formatMinuts}:${formatSegons}`;
 }
 
-// Funcio per iniciar el comptador enrrere
+// Función para iniciar el contador regresivo
 function iniciarCompteEnrrere() {
   intervalCompteEnrrere = setInterval(() => {
     tempsCompteEnrrere--;
@@ -114,7 +112,7 @@ function iniciarCompteEnrrere() {
   }, 1000);
 }
 
-// Funcio per reiniciar el compte enrrere
+// Función para reiniciar el contador regresivo
 function reiniciarCompteEnrrere() {
   clearInterval(intervalCompteEnrrere);
   tempsCompteEnrrere = 10;
@@ -122,12 +120,12 @@ function reiniciarCompteEnrrere() {
   iniciarCompteEnrrere();
 }
 
-// Funcio per aturar el compte enrrere
+// Función para detener el contador regresivo
 function aturarCompteEnrrere() {
   clearInterval(intervalCompteEnrrere);
 }
 
-// Funcio per avançar en el torn del joc al seleccionar una lletra
+// Función para avanzar en el turno del juego al seleccionar una letra
 function avançarTorn(element) {
   aturarCompteEnrrere();
 
@@ -166,7 +164,7 @@ function avançarTorn(element) {
   acabarPartida();
 }
 
-// Funcio per acabar la partida i mostrar el resultat
+// Función para terminar la partida y mostrar el resultado
 function acabarPartida() {
   const popup = document.getElementById("popup");
   const popupTitol = document.getElementById("popup-titol");
@@ -188,8 +186,8 @@ function acabarPartida() {
       historialEstadistiques.push(estadistiques);
       localStorage.setItem('historialEstadistiques', JSON.stringify(historialEstadistiques));
 
-      popupTitol.innerHTML = "Felicitats, has guanyat!";
-      popupMissatge.innerHTML = "¡Has endivinat la paraula correctament!<br><br>ESTADISTIQUES<br>Paraula: " + estadistiques.word + "<br>Errors: " + estadistiques.errors + "<br>Temps: " + estadistiques.time;
+      popupTitol.innerHTML = "¡Felicitaciones, has ganado!";
+      popupMissatge.innerHTML = "¡Has adivinado la palabra correctamente!<br><br>ESTADÍSTICAS<br>Palabra: " + estadistiques.word + "<br>Errores: " + estadistiques.errors + "<br>Tiempo: " + estadistiques.time;
 
       botoTancar.style.display = "none";
 
@@ -197,8 +195,8 @@ function acabarPartida() {
         window.location.href = "../../Historia/Dificil/prova3.html";
       }, 2000);
     } else {
-      popupTitol.innerHTML = "Has perdut";
-      popupMissatge.innerHTML = "La paraula a endivinar era: " + paraulaAEndevinar;
+      popupTitol.innerHTML = "Has perdido";
+      popupMissatge.innerHTML = "La palabra a adivinar era: " + paraulaAEndevinar;
       setTimeout(() => {
         window.location.reload();
       }, 2000);
@@ -208,12 +206,12 @@ function acabarPartida() {
   }
 }
 
-// Funcio per començar el joc
+// Función para comenzar el juego
 function començar() {
   interval = setInterval(crono, 1000);
 }
 
-// Funcio per reiniciar el cronometre
+// Función para reiniciar el cronómetro
 function reiniciar() {
   temps.setHours(0, 0, 0, 0);
   hores.innerHTML = "00";
@@ -221,12 +219,12 @@ function reiniciar() {
   segons.innerHTML = "00";
 }
 
-// Funcio per aturar el cronometre
+// Función para detener el cronómetro
 function aturar() {
   clearInterval(interval);
 }
 
-// Funcio per seleccionar una paraula aleatoria d'una categoria
+// Función para seleccionar una palabra aleatoria de una categoría
 function paraulaAleatoria(categoria) {
   obtenirJSON((error, dades) => {
     gestionaResposta(error, dades);
@@ -242,7 +240,7 @@ function paraulaAleatoria(categoria) {
   }, "JSON/" + categoria + ".json");
 }
 
-// Funcio per obtenir dades JSON mitjançant una sol·licitud XMLHttpRequest
+// Función para obtener datos JSON mediante una solicitud XMLHttpRequest
 const obtenirJSON = (callback, source) => {
   const peticio = new XMLHttpRequest();
 
@@ -251,7 +249,7 @@ const obtenirJSON = (callback, source) => {
       const respuesta = JSON.parse(peticio.responseText);
       callback(undefined, respuesta);
     } else if (peticio.readyState === 4) {
-      callback("No s'han pogut obtenir les dades", undefined);
+      callback("No se pudieron obtener los datos", undefined);
     }
   });
 
@@ -259,7 +257,7 @@ const obtenirJSON = (callback, source) => {
   peticio.send();
 };
 
-// Funcio per gestionar la resposta JSON
+// Función para gestionar la respuesta JSON
 function gestionaResposta(error, dades) {
   if (error) {
     console.log(error);
@@ -268,22 +266,20 @@ function gestionaResposta(error, dades) {
   }
 }
 
-/* ESDEVENIMENTS */
-
-// Afegir esdeveniment al boto de tancar del popup
+// Agregar evento al botón de cerrar del popup
 const botoTancar = document.getElementById("boto-tancar");
 botoTancar.addEventListener("click", () => {
   popup.style.display = "none";
   window.location.reload();
 });
 
-// Afegir esdeveniment al boto d'inici
+// Agregar evento al botón de inicio
 boto.addEventListener("click", (e) => {
   boto.disabled = true;
   iniciarPartida();
 });
 
-// Afegir esdeveniment al teclat
+// Agregar evento al teclado
 teclat.addEventListener("click", (e) => {
   let element = e.target;
   if (element.classList.contains("lletra")) {
@@ -293,24 +289,18 @@ teclat.addEventListener("click", (e) => {
 
 // Función para actualizar el temporizador
 function actualizarTemporizador() {
-  // Obtener el elemento del temporizador
   let temporizadorElement = document.getElementById("temporizador");
   
-  // Obtener el tiempo inicial del almacenamiento local
   let tiempoInicial = localStorage.getItem('tiempoInicial');
   
   if (tiempoInicial !== null) {
-      // Calcular el tiempo transcurrido
       let tiempoTranscurrido = Math.floor((new Date() - new Date(tiempoInicial)) / 1000);
 
-      // Calcular minutos y segundos
       let minutos = Math.floor(tiempoTranscurrido / 60);
       let segundos = tiempoTranscurrido % 60;
 
-      // Añadir un cero delante de los segundos si es necesario
       segundos = segundos < 10 ? "0" + segundos : segundos;
 
-      // Actualizar el contenido del elemento del temporizador
       temporizadorElement.textContent = "Tiempo transcurrido: " + minutos + ":" + segundos + " segundos";
   }
 }

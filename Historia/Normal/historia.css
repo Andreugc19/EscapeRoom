@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     margin: 0;
     padding: 0;
@@ -24,6 +25,7 @@ body {
     z-index: 1000;
 }
 
+/* Estilo de titulos y contenedores */
 .container {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -34,25 +36,27 @@ body {
     margin-right: auto;
 }
 
-.title {
+.titulo {
     font-size: 24px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
 
-.container {
+.contenedor {
     font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 60%;
 }
 
-.question {
+/* Estilo de pregunta */
+.pregunta {
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
 }
 
-.button-play {
+/* Estilo de boton para jugar */
+.boton-jugar {
     background-color: #383938;
     color: white;
     padding: 10px 20px;
@@ -62,6 +66,6 @@ body {
     font-size: 16px;
 }
 
-.button-play:hover {
+.boton-jugar:hover {
     background-color: #616261;
 }

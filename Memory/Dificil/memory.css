@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     background: url("../img/isaac-bg.jpg");
     background-size: cover;
@@ -15,13 +16,15 @@ body {
     border-radius: 5px;
     margin: 20px;
     font-size: 18px;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
 }
 
+/* Estilo de temporizador */
 #temporizador-container span{
     color: black;
 }
 
+/* Estilo de borde y titulos */
 #board {
     height: 530px;
     width: 474px;
@@ -45,6 +48,7 @@ h2, span{
     border: 1px solid white;
 }
 
+/* Estilo de cartas y rotamiento */
 .card img {
     width: 100%;
     height: 100%;
@@ -55,6 +59,7 @@ h2, span{
     transform: rotateY(180deg);
 }
 
+/* Estilo de popup */
 .popup-container {
     display: none;
     position: fixed;

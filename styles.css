@@ -1,3 +1,4 @@
+/* Estilos para el cuerpo de la página */
 body {
     margin: 0;
     padding: 0;
@@ -11,17 +12,24 @@ body {
     background-position: center;
 }
 
+/* Estilos para el contenedor principal */
 .container {
     text-align: center;
     color: #fff;
 }
 
+.welcome-message {
+    color: white;
+}
+
+/* Estilos para la imagen del título */
 .title-image {
     width: 95%;
     margin-top: 300px;
     margin-left: 300px;
 }
 
+/* Estilos para el contenedor de botones */
 .buttons-container {
     display: flex;
     flex-direction: column;
@@ -29,6 +37,7 @@ body {
     margin-top: 40px;
 }
 
+/* Estilos para los botones */
 .button {
     margin-bottom: 20px;
     height: 70px;
@@ -42,14 +51,12 @@ body {
     transition: background 0.3s;
 }
 
+/* Estilos para el efecto hover en los botones */
 .button:hover {
     background: linear-gradient(135deg, #000000, #990d0d);
 }
 
-.welcome-message {
-    color: white;
-}
-
+/* Estilos para el botón de menú */
 .menu-button {
     position: absolute;
     top: 20px;
@@ -62,6 +69,7 @@ body {
     z-index: 2;
 }
 
+/* Estilos para el menú lateral */
 .menu {
     position: fixed;
     top: 0;
@@ -72,22 +80,26 @@ body {
     transition: 0.5s;
 }
 
+/* Estilos para la lista del menú */
 .menu ul {
     list-style: none;
     padding: 0;
 }
 
+/* Estilos para los elementos de la lista del menú */
 .menu ul li {
     padding: 20px;
     border-bottom: 1px solid #555;
 }
 
+/* Estilos para los enlaces del menú */
 .menu ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
 }
 
+/* Estilos para el efecto hover en los enlaces del menú */
 .menu ul li a:hover {
     color: #ca0d0d;
 }
@@ -105,30 +117,7 @@ body {
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
+/* Estilos para el contenido de la ventana modal */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -139,16 +128,35 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para el botón de cerrar la ventana modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Estilos para el efecto hover en el botón de cerrar */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el formulario dentro de la ventana modal */
 .modal-content form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Estilos para las etiquetas del formulario */
 .modal-content label {
     margin-bottom: 10px;
 }
 
+/* Estilos para los campos de texto del formulario */
 .modal-content input[type="text"],
 .modal-content input[type="password"] {
     padding: 10px;
@@ -160,6 +168,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilos para los botones dentro de la ventana modal */
 .modal-content button {
     padding: 10px 20px;
     background: linear-gradient(135deg, #000000, #bd1f1f);
@@ -171,6 +180,7 @@ body {
     width: 35%;
 }
 
+/* Estilos para el efecto hover en los botones dentro de la ventana modal */
 .modal-content button:hover {
     background: linear-gradient(135deg, #000000, #990d0d);
 }
