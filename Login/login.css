@@ -51,6 +51,14 @@ input[type="password"]:focus {
     border-color: #bd1f1f;
 }
 
+/* Estilos para el mensaje de error */
+#mensaje {
+    color: #bd1f1f;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
 /* Estilos para el botón */
 button {
     width: 100%;

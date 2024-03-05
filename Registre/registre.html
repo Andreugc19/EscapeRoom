@@ -11,8 +11,12 @@
         <h2>Registro</h2>
         <!-- Formulario de registro -->
         <form id="registro-form">
+            <label>Usuario</label>
             <input type="text" id="nombre" placeholder="Nombre del usuario" required>
+            <span id="nombre-error" class="error"></span>
+            <label>Contraseña</label>
             <input type="password" id="contrasena" placeholder="Contraseña" required>
+            <span id="contrasena-error" class="error"></span>
             <button type="submit" class="button">Registrarse</button>
         </form>
         <!-- Mensaje de respuesta del servidor -->

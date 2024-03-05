@@ -60,6 +60,10 @@ input[type="password"] {
     margin: 0 auto 15px;
 }
 
+.error {
+    color: red;
+}
+
 /* Estilos para el botón */
 button {
     width: 100%;
