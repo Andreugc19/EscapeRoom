@@ -287,26 +287,27 @@ teclat.addEventListener("click", (e) => {
   }
 });
 
-function darPista() {
-  let letrasNoAdivinadas = [];
+// Función para dar una pista al jugador
+function donarPista() {
+  let lletresNoEndivinades = [];
   // Iterar sobre la palabra a adivinar y seleccionar las letras no adivinadas aún
-  for (let i = 0; i < palabraAAdvinar.length; i++) {
-    if (!caracteresAdivinados[i]) {
-      letrasNoAdivinadas.push(palabraAAdvinar[i]);
+  for (let i = 0; i < paraulaAEndevinar.length; i++) {
+    if (!caractersEndivitats[i]) {
+      lletresNoEndivinades.push(paraulaAEndevinar[i]);
     }
   }
   // Si hay letras no adivinadas, elige una aleatoria y avanza el turno con esa letra
-  if (letrasNoAdivinadas.length > 0) {
-    let indiceAleatorio = Math.floor(Math.random() * letrasNoAdivinadas.length);
-    let letraAleatoria = letrasNoAdivinadas[indiceAleatorio];
-    let teclasCoincidentes = document.querySelectorAll(".letra:not(.correcta):not(.incorrecta)");
-    for (let tecla of teclasCoincidentes) {
-      if (tecla.textContent === letraAleatoria) {
+  if (lletresNoEndivinades.length > 0) {
+    let indexAleatori = Math.floor(Math.random() * lletresNoEndivinades.length);
+    let lletraAleatoria = lletresNoEndivinades[indexAleatori];
+    let teclesConcients = document.querySelectorAll(".lletra:not(.correcta):not(.incorrecta)");
+    for (let tecla of teclesConcients) {
+      if (tecla.textContent === lletraAleatoria) {
         if (!tecla.classList.contains("pista-revelada")) {
           tecla.classList.add("pista-revelada");
-          avanzarTurno(tecla);
-          intentosRestantes--;
-          contador.innerHTML = intentosRestantes;
+          avançarTorn(tecla); // Aquí es donde cambiamos avanzarTurno(tecla) por avançarTorn(tecla)
+          varIntents--; // Reducimos el número de intentos disponibles
+          contador.innerHTML = varIntents; // Actualizamos el contador en el HTML
         }
         setTimeout(() => {
           tecla.classList.remove("pista-revelada");
@@ -318,7 +319,7 @@ function darPista() {
 }
 
 // Event listener para el botón "Generar Pista"
-document.getElementById("boton-pista").addEventListener("click", darPista);
+document.getElementById("hint-button").addEventListener("click", donarPista);
 
 // Función para actualizar el temporizador
 function actualizarTemporizador() {
