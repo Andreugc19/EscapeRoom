@@ -57,3 +57,6 @@ Millorar estils css de diferents pagines dels jocs
 
 4/03:
 Implementar boto per tornar a la pagina d'inici a les pagines de login i registre
+
+5/03:
+Realitzacio de documentacio tecnica del projecte Escape Room
